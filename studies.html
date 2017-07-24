@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+              <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+              <link rel="stylesheet" href="/resources/demos/style.css">
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.2/gist-embed.min.js"></script>
+    
+              <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+              <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="css/studies.css" type="text/css" />
+
+          <style>
+          #accordion {
+            padding: 0px;
+            max-width: 770px;
+            height: 940px;
+            margin: 0 auto;
+            
+          }
+          
+          #file-jsbin-gevaker-js {
+              min-width: 10px;
+          }
+
+          </style>
+                
+        <title>Studies</title>
+        
+          <script>
+          $( function() {
+            $( "#accordion" ).accordion({
+                heightStyle: "fill",
+                collapsible: true
+            });
+            
+            // $( "#accordion-resizer" ).resizable({
+            //   minHeight: 140,
+            //   minWidth: 200,
+            //   resize: function() {
+            //     $( "#accordion" ).accordion( "refresh" );
+            //   }
+            // });
+          } );
+          </script>
+    </head>
+    <body>
+        <div id="all-contents">
+        <nav>
+            <header>Rob's Fantastic New Website</header>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="studies.html">Studies</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="content">
+                <h1>Javascript</h1>
+                <!-- YOUR NOTE SECTIONS GO BELOW HERE -->
+
+<!--                <section>  
+                    <hr>
+                    <a href="#variables"><h2>i. Variables</h2></a>
+                    <code data-gist-id="c4da475d211d56b04cc16de6bc1ea2c1" data-gist-file="jsbin.gevaker.js" data-gist-hide-footer="true"></code>
+                </section>
+-->             
+                    <div id="accordion">
+                      <h3>i. Variables</h3>
+                          <div>
+                          <code data-gist-id="c4da475d211d56b04cc16de6bc1ea2c1" data-gist-file="jsbin.gevaker.js" data-gist-hide-footer="true"></code>
+                          </div>
+                        <h3>ii. Datatypes (Simple & Complex)</h3>
+                          <div>
+                          <code data-gist-id="fd1c45e988a44e99fbf2a336568b7c04" data-gist-file="jsbin.natesu.js" data-gist-hide-footer="true"></code>
+                          </div>
+                        <h3>iii. Operators</h3>
+                          <div>
+                          <code data-gist-id="c1d0c76143365cbbace3bfc9c5561ffc" data-gist-file="jsbin.yoraxic.js" data-gist-hide-footer="true"></code>
+                          </div>
+
+                    </div>
+                <!-- YOUR NOTE SECTIONS GO ABOVE HERE -->
+                </div>
+            </div>
+        </main>
+    </div>
+    </body>
+</html>
