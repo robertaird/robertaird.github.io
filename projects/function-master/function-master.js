@@ -94,7 +94,7 @@ function nonFriends(name, people) {
     var nonFriends = [];
     for (var i = 0; i < people.length; i++) {
         if (name !== people[i].name) {
-            var check = false
+            var check = false;
             for (var l = 0; l < people[i].friends.length; l++) {
                 if (name === people[i].friends[l])
                     check = true;
@@ -105,6 +105,22 @@ function nonFriends(name, people) {
     } 
     return nonFriends;
 }
+
+/*
+ * Diana's simpler solution to the above, for reference!
+ * function nonFriends(name, data){
+ *  var array = [];
+ *  for (var i = 0; i < data.length; i++){
+ *       if (data[i][‘name’] !== name && data[i][‘friends’] && (!(data[i][‘friends’].includes(name)))){
+ **
+ ** if(data[i].name !== name && !data[i].friends.includes(name))
+ **
+ *      array.push(data[i][‘name’]);
+ *   }
+ *   }
+ *  return array;
+ * }
+ */
 
 function updateObject(object, key, value) {
     object[key] = value;
@@ -127,3 +143,17 @@ function dedup(array) {
     }
     return array;
 }
+
+/*
+ * Diana's dedup function
+ * 
+ * function dedup(data){
+ *    var newArray = [];
+ *    for (var i = 0; i < data.length; i++){
+ *        if (!(newArray.includes(data[i]))){
+ *        newArray.push(data[i]);
+ *        }
+ *    }
+ *   return newArray;
+ * }
+ */
