@@ -314,7 +314,8 @@ _.map = function (collection, func) {
 _.pluck = function (array, property) {
     var newArr = [];
     _.map(array, function (value, index, array) {
-        newArr.push(array[index][property]);
+//        newArr.push(array[index][property]);
+            newArr.push(value[property]);
     })
     return newArr;
 }
@@ -350,8 +351,8 @@ _.contains = function (array, value) {
 *          current value, current key, <collection>
 *   2) If the return value of calling <function> for every element is true, return true
 *   3) If even one of them returns false, return false
-*   4) If <function> is not provided, return true if every element is truthy, otherwise return false
-* Gotchas:
+*   4wise return false
+* Got) If <function> is not provided, return true if every element is truthy, otherchas:
 *   1) what if <function> doesn't return a boolean
 *   2) What if <function> is not given?
 * Examples:
@@ -436,6 +437,40 @@ _.some = function (collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+// _.reduce = function (array, func, seed) {
+//     // If no 'seed', set seed to first element of 'array'
+//     // Pass 'seed' to 'previousResult' the first time
+//     // Call 'func' for each element in 'array' with arguments 'previousResult, element, index'
+//     _.each(array, function (value, index, array) {
+//         if (seed === undefined) {
+//             seed = value;
+
+//         } else {
+            
+//     // After the first time, use return value of 'func' as 'previousResult'
+//         seed = func(seed, value, index); 
+//         }
+//     });
+//     // Finally, return the return value of final 'func' call
+//     return seed;
+// }
+
+_.reduce = function(array, func, seed) {
+    if (seed === undefined) {
+        seed = "changeme!";
+    }   _.each(array, function (value, index, array) {
+            if (seed === "changeme!") {
+                seed = value;
+                func(seed, value, index);
+                //console.log("the first index is " + index);
+            } else {
+            seed = func(seed, value, index);
+            //console.log("and now the index is " + index);
+            }
+            return seed;
+        });
+    return seed;
+}
 
 /** _.extend()
 * Arguments:
@@ -451,6 +486,17 @@ _.some = function (collection, func) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function (object)  {
+    var objects = Array.from(arguments);
+    _.each(objects, function(value, index, objects) {
+        _.each(objects[index], function (value, key, collection) {
+            object[key] = collection[key];
+        })
+    })
+    return object;
+};
+
 
 
 // This is the proper way to end a javascript library
